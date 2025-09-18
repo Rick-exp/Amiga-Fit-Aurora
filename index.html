@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(145deg, #F0EAD6, #D0F0C0); /* Eggshell + Tea Green */
-      color: #404E5C; /* Payne's Gray */
+      background: linear-gradient(145deg, #0D0D0D, #1A1A1A); /* fundo escuro */
+      color: #f9f9f9;
       padding: 40px 20px;
       overflow-x: hidden;
       overflow-y: auto;
@@ -34,9 +34,14 @@
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 20px;
-      color: #43B3AE; /* Verdigris */
+      color: #E63946; /* vermelho intenso */
+    }
+
+    h2 {
+      color: #FF6B35; /* laranja vibrante */
+      margin-top: 40px;
     }
 
     p {
@@ -48,10 +53,10 @@
     .button {
       display: inline-block;
       padding: 18px 40px;
-      background: linear-gradient(90deg, #A3C1AD, #43B3AE); /* Cambridge Blue → Verdigris */
-      color: #fff;
+      background: linear-gradient(90deg, #FFD60A, #FF6B35); /* amarelo ouro → laranja */
+      color: #000;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1.2em;
       text-decoration: none;
       border-radius: 50px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -59,8 +64,15 @@
     }
 
     .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #43B3AE;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #FFD60A;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #FF6B35;
+      margin: 40px 0;
     }
 
     @keyframes fadeIn {
@@ -86,9 +98,9 @@
     A verdade é que a maioria dos métodos exige <strong>sacrifício demais</strong> e <strong>resultados de menos</strong>.  
     E quando você não consegue seguir, a culpa e a frustração só aumentam.</p>
 
-    <hr style="border: 0; height: 1px; background: #A3C1AD; margin: 40px 0;">
+    <hr>
 
-    <p><strong>Agora imagine um método diferente:</strong></p>
+    <h2>Um método diferente</h2>
     <p>➡️ Apenas 15 minutos por dia.<br>
        ➡️ Sem academias caras.<br>
        ➡️ Sem dietas impossíveis.<br>
@@ -97,15 +109,26 @@
     <p>Esse é o <strong>Desafio 30 Dias Fit Express</strong> — um programa criado para pessoas comuns que querem resultados reais sem complicação.  
     O segredo? Um <strong>mecanismo único</strong> que combina micro-hábitos inteligentes + receitas rápidas + treinos curtos de alta eficiência.</p>
 
-    <hr style="border: 0; height: 1px; background: #A3C1AD; margin: 40px 0;">
+    <hr>
 
+    <h2>Resultados em 30 dias</h2>
     <p>🚀 Em apenas 30 dias, você vai sentir seu corpo mais leve, sua energia renovada e sua autoestima de volta.</p>
-    <p>👉 Clique no botão abaixo e comece agora mesmo o <strong>Desafio 30 Dias Fit Express</strong>.</p>
-    <p>Por apenas <strong>R$29,90</strong> você garante acesso imediato a:  
+
+    <hr>
+
+    <h2>O valor real desse método</h2>
+    <p>Com tudo que você vai aprender aqui, o preço do produto poderia facilmente ser <strong>R$2000</strong>.  
+    Mas calma, esse não vai ser o valor do investimento.</p>
+
+    <p>Eu consegui um <strong>super desconto</strong> para você.  
+    O valor do investimento será de apenas <strong>R$29,90</strong>.</p>
+
+    <p>E por esse valor simbólico, você garante acesso imediato a:  
       <br>✅ Receitas fitness rápidas  
       <br>✅ Planos de dieta simples  
       <br>✅ Treinos curtos de 15 minutos
     </p>
+
     <p><strong>⚠️ Oferta especial:</strong> esse valor é promocional e pode sair do ar a qualquer momento.</p>
 
     <a href="SEU_LINK_DE_CHECKOUT" class="button">👉 QUERO COMEÇAR AGORA</a>
@@ -115,7 +138,7 @@
   </div>
 
   <script>
-    // partículas em Verdigris
+    // partículas em vermelho
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -135,7 +158,7 @@
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#43B3AE'; // Verdigris
+      ctx.fillStyle = '#E63946'; // vermelho intenso
 
       particles.forEach(p => {
         ctx.beginPath();
@@ -161,4 +184,5 @@
   </script>
 </body>
 </html>
+
 
