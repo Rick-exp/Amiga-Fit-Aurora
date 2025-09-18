@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Desafio 30 Dias Fit Express</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #fdfdfb;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #56ab2f, #a8e063);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-    }
-    section {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, #F0EAD6, #D0F0C0); /* Eggshell + Tea Green */
+      color: #404E5C; /* Payne's Gray */
       padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
     }
-    h2 {
-      color: #2c3e50;
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #43B3AE; /* Verdigris */
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
-    .cta {
-      text-align: center;
-      margin: 40px 0;
+
+    .button {
+      display: inline-block;
+      padding: 18px 40px;
+      background: linear-gradient(90deg, #A3C1AD, #43B3AE); /* Cambridge Blue → Verdigris */
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 30px;
     }
-    .cta button {
-      background: #ff6b35;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #43B3AE;
     }
-    .cta button:hover {
-      background: #e85a2a;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
+  <canvas class="particles" id="particles"></canvas>
 
-  <header>
+  <div class="container">
     <h1>🔥 Emagreça sem esforço!</h1>
-    <p>15 minutos por dia é tudo o que você precisa.</p>
-  </header>
+    <p><strong>15 minutos por dia é tudo o que você precisa.</strong></p>
 
-  <section>
-    <h2>Atenção</h2>
     <p>Você já tentou de tudo para emagrecer — dietas malucas, treinos intermináveis, promessas milagrosas — e nada funcionou?  
     A verdade é que a maioria dos métodos exige <strong>sacrifício demais</strong> e <strong>resultados de menos</strong>.  
     E quando você não consegue seguir, a culpa e a frustração só aumentam.</p>
-  </section>
 
-  <section>
-    <h2>Interesse</h2>
-    <p>Agora imagine um método diferente:  
-    ➡️ Apenas <strong>15 minutos por dia</strong>.  
-    ➡️ Sem academias caras.  
-    ➡️ Sem dietas impossíveis.  
-    ➡️ Sem precisar abrir mão da sua vida social.</p>
-  </section>
+    <hr style="border: 0; height: 1px; background: #A3C1AD; margin: 40px 0;">
 
-  <section>
-    <h2>Desejo</h2>
+    <p><strong>Agora imagine um método diferente:</strong></p>
+    <p>➡️ Apenas 15 minutos por dia.<br>
+       ➡️ Sem academias caras.<br>
+       ➡️ Sem dietas impossíveis.<br>
+       ➡️ Sem precisar abrir mão da sua vida social.</p>
+
     <p>Esse é o <strong>Desafio 30 Dias Fit Express</strong> — um programa criado para pessoas comuns que querem resultados reais sem complicação.  
     O segredo? Um <strong>mecanismo único</strong> que combina micro-hábitos inteligentes + receitas rápidas + treinos curtos de alta eficiência.</p>
-  </section>
 
-  <section>
-    <h2>Ação</h2>
+    <hr style="border: 0; height: 1px; background: #A3C1AD; margin: 40px 0;">
+
     <p>🚀 Em apenas 30 dias, você vai sentir seu corpo mais leve, sua energia renovada e sua autoestima de volta.</p>
     <p>👉 Clique no botão abaixo e comece agora mesmo o <strong>Desafio 30 Dias Fit Express</strong>.</p>
     <p>Por apenas <strong>R$29,90</strong> você garante acesso imediato a:  
@@ -99,14 +107,58 @@
       <br>✅ Treinos curtos de 15 minutos
     </p>
     <p><strong>⚠️ Oferta especial:</strong> esse valor é promocional e pode sair do ar a qualquer momento.</p>
-    <div class="cta">
-      <button>Quero começar agora!</button>
-    </div>
-  </section>
 
-  <footer>
-    <p>© 2025 Desafio 30 Dias Fit Express - Todos os direitos reservados.</p>
-  </footer>
+    <a href="SEU_LINK_DE_CHECKOUT" class="button">👉 QUERO COMEÇAR AGORA</a>
 
+    <p style="margin-top: 30px;"><em>Mas atenção: esse botão não é pra quem está confortável na zona de segurança.<br>
+    É pra quem tem fome de evolução, coragem de agir e visão de longo prazo.</em></p>
+  </div>
+
+  <script>
+    // partículas em Verdigris
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#43B3AE'; // Verdigris
+
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
+
