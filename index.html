@@ -7,119 +7,141 @@
   <meta name="description" content="Projeto Virada 30D: protocolo de 15 minutos por dia para quem quer resultado real sem dieta maluca nem academia." />
   <meta name="theme-color" content="#0b0b0b" />
   <style>
-    /* RESET */
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
     body{
       font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background:linear-gradient(180deg,#070707 0%, #0f0f10 60%);
       color:#e9e9ea;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
     }
-
-    /* LAYOUT */
     .container{max-width:1100px;margin:0 auto;padding:28px;}
     header.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand .logo{
-      width:48px;height:48px;border-radius:8px;background:#1b1b1d;display:flex;align-items:center;justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,.6);font-weight:700;color:#fff;font-size:18px
-    }
-    .brand .title{font-weight:700;font-size:16px;letter-spacing:.6px;color:#f5f5f5}
+    .brand .logo{width:48px;height:48px;border-radius:8px;background:#1b1b1d;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.6);font-weight:700;color:#fff;font-size:18px}
+    .brand .title{font-weight:700;font-size:16px;color:#f5f5f5}
     nav .cta-buy{background:#b22222;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
-    nav .cta-buy:hover{opacity:.95;transform:translateY(-1px)}
-
-    /* HERO */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
     @media(max-width:980px){.hero{grid-template-columns:1fr;}}
-    .hero-left h1{font-size:34px;line-height:1.05;color:#fff;margin-bottom:12px}
-    .hero-left p{color:#cfcfcf;margin-bottom:18px;font-size:16px}
-    .cta-row{display:flex;gap:12px;align-items:center}
     .btn-primary{background:#e03b3b;color:#fff;padding:14px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer;}
-    .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.08);color:#ddd;padding:12px 16px;border-radius:10px;cursor:pointer}
-    .muted{color:#b7b7b7;font-size:14px}
-
-    /* BOX */
-    .offer-card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.04);padding:22px;border-radius:14px}
+    .offer-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);padding:22px;border-radius:14px}
     .price{font-size:28px;font-weight:800;color:#ffd9d9}
-    .price del{color:#8b8b8b;font-size:14px;font-weight:600;margin-left:8px}
     .countdown{margin-top:12px;font-weight:700;color:#ffce7a}
-
-    /* SECTIONS */
     section{padding:28px 0;border-top:1px solid rgba(255,255,255,.02)}
     h2{font-size:20px;margin-bottom:12px;color:#fff}
-    .lead{color:#cfcfcf;margin-bottom:12px}
-    .bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media(max-width:700px){.bullets{grid-template-columns:1fr}}
-    .bullet{background:rgba(255,255,255,.02);padding:14px;border-radius:10px;color:#e6e6e6}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media(max-width:980px){.grid-3{grid-template-columns:1fr}}
-
-    /* FAQ */
+    .bullet{background:rgba(255,255,255,.02);padding:14px;border-radius:10px;color:#e6e6e6;margin-bottom:8px}
     .faq-item{background:rgba(255,255,255,.01);border:1px solid rgba(255,255,255,.03);padding:12px;border-radius:10px;margin-bottom:8px;cursor:pointer}
-    .faq-question{display:flex;justify-content:space-between;align-items:center}
     .faq-answer{display:none;color:#d0d0d0;margin-top:8px;font-size:14px}
-
-    /* FORM */
-    .form-row{display:flex;gap:8px}
-    .form-row input[type="text"], .form-row input[type="email"], .form-row input[type="tel"]{
-      flex:1;padding:12px;border-radius:8px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);color:#fff
-    }
-    .tiny{font-size:13px;color:#bdbdbd;margin-top:8px}
-
-    /* FOOTER */
     footer{padding:18px 0;color:#9a9a9a;font-size:13px;border-top:1px solid rgba(255,255,255,.02);margin-top:18px}
-    .small{font-size:12px;color:#8f8f8f}
-
-    /* badges / media */
-    .media-logos{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .media-logos a{display:inline-block;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:8px;color:#ddd;text-decoration:none;font-size:13px}
-
-    /* utilities */
-    .muted-2{color:#9a9a9a}
-    .accent{color:#ff9a9a;font-weight:800}
-    .center{text-align:center}
-    .tight{line-height:1.25}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03);font-weight:700;color:#fff}
-
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="site-header" role="banner">
-      <div class="brand" aria-label="Marca Projeto Virada 30D">
+    <header class="site-header">
+      <div class="brand">
         <div class="logo">V30</div>
         <div>
           <div class="title">Projeto Virada 30D</div>
-          <div class="muted" style="font-size:12px">15 min/dia · Método direto</div>
+          <div style="font-size:12px;color:#b7b7b7">15 min/dia · Método direto</div>
         </div>
       </div>
-      <nav>
-        <a href="#comprar" class="cta-buy">GARANTIR AGORA</a>
-      </nav>
+      <nav><a href="#comprar" class="cta-buy">GARANTIR AGORA</a></nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-left">
-        <h1 id="hero-title">Emagreça em 30 dias com apenas <span class="accent">15 minutos por dia</span> — sem academia, sem dietas malucas e sem desculpas.</h1>
-        <p class="lead tight">Chega de se olhar no espelho e sentir vergonha. Projeto Virada 30D é o protocolo prático que destrava seu corpo e sua confiança em 30 dias. Você tem 15 minutos — nós mostramos o resto.</p>
-
-        <div class="cta-row" role="region" aria-label="Chamada para ação">
-          <button class="btn-primary" id="cta-top">Quero minha Virada em 30D</button>
-          <button class="btn-ghost" id="cta-modules">Ver módulos & bônus</button>
-        </div>
-
-        <p class="tiny" style="margin-top:12px">*Sem VSL. Sem enrolação. Garantia 14 dias.</p>
+    <section class="hero">
+      <div>
+        <h1>Emagreça em 30 dias com apenas <span style="color:#ff9a9a">15 minutos por dia</span></h1>
+        <p>Chega de se olhar no espelho e sentir vergonha. Projeto Virada 30D é o protocolo prático que destrava seu corpo e sua confiança em 30 dias.</p>
+        <button class="btn-primary" id="cta-top">Quero minha Virada em 30D</button>
       </div>
 
-      <aside class="offer-card" aria-label="Oferta">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <div>
-            <div class="pill">LANÇAMENTO LIMITADO</div>
-            <div style="margin-top:12px;color:#ddd">Pacote digital + grupo fechado</div>
-          </div>
-          <div style="text-align:right">
-            <div class="
+      <aside class="offer-card" id="comprar">
+        <div>
+          <div class="price">R$19,90</div>
+          <div style="margin-top:8px;color:#ddd">Valor real: <del>R$197</del></div>
+        </div>
+        <div class="countdown" id="countdown">Oferta expira em <span id="countdown-timer">20:00</span></div>
+        <button class="btn-primary" style="margin-top:16px">QUERO MINHA VIRADA — R$19,90</button>
+      </aside>
+    </section>
+
+    <!-- DOR -->
+    <section>
+      <h2>A realidade que dói</h2>
+      <div class="bullet">Você evita espelhos e fotos de corpo inteiro.</div>
+      <div class="bullet">Comprou roupas novas que ficaram no armário.</div>
+      <div class="bullet">Fica cansado(a) em tarefas simples do dia a dia.</div>
+    </section>
+
+    <!-- PROMESSA -->
+    <section>
+      <h2>A virada em 30 dias — o protocolo</h2>
+      <p>Sem mágica. Apenas execução curta, intensa e prática que altera medidas e energia.</p>
+    </section>
+
+    <!-- O QUE RECEBE -->
+    <section>
+      <h2>O que você recebe agora</h2>
+      <div class="offer-card">
+        <strong>Extras</strong>
+        <ul style="margin-top:8px;color:#dcdcdc">
+          <li>Checklist diário interativo</li>
+          <li>Acesso ao grupo fechado (vagas limitadas)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OBJEÇÕES -->
+    <section>
+      <h2>Cortando as desculpas</h2>
+      <div class="bullet">Não tenho tempo → 15 minutos. Menos que meia série da Netflix.</div>
+      <div class="bullet">Já tentei de tudo → Método simples, garantia 14 dias.</div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Perguntas frequentes</h2>
+      <div class="faq-item">
+        <div><strong>Preciso de equipamentos?</strong></div>
+        <div class="faq-answer">Não. Todos os treinos são com peso do corpo.</div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section style="text-align:center">
+      <h2>Assuma sua Virada agora</h2>
+      <p>Ou entra no Projeto Virada 30D e vira o jogo em 30 dias — ou segue com as mesmas desculpas.</p>
+      <button class="btn-primary">QUERO MINHA VIRADA — R$19,90</button>
+    </section>
+
+    <footer>
+      <div>© Projeto Virada 30D — Resultados variam. Consulte médico se necessário.</div>
+    </footer>
+  </div>
+
+  <script>
+    // CONTADOR 20 minutos
+    (function(){
+      const target = new Date(Date.now() + 1000*60*20);
+      const el = document.getElementById('countdown-timer');
+      function pad(n){return String(n).padStart(2,'0')}
+      function tick(){
+        const now = new Date();
+        let diff = Math.max(0, Math.floor((target - now)/1000));
+        const m = Math.floor(diff/60); const s = diff%60;
+        el.textContent = pad(m)+':'+pad(s);
+        if (diff<=0){ clearInterval(timer); document.getElementById('countdown').textContent='Oferta expirada — preço será reajustado.'}
+      }
+      tick();
+      const timer = setInterval(tick,1000);
+    })();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(node=>{
+      node.addEventListener('click',()=>{
+        const ans = node.querySelector('.faq-answer');
+        ans.style.display = ans.style.display==='block'?'none':'block';
+      })
+    });
+  </
