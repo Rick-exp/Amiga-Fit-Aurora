@@ -1,185 +1,345 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Desafio 30 Dias Fit Express</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projeto Virada 30D — Emagreça em 30 dias</title>
+  <meta name="description" content="Projeto Virada 30D: protocolo de 15 minutos por dia para quem quer resultado real sem dieta maluca nem academia." />
+  <meta name="theme-color" content="#0b0b0b" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(145deg, #0D0D0D, #1A1A1A); /* fundo escuro */
-      color: #f9f9f9;
-      padding: 40px 20px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      position: relative;
+    /* RESET */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#070707 0%, #0f0f10 60%);
+      color:#e9e9ea;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
 
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:28px;}
+    header.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{
+      width:48px;height:48px;border-radius:8px;background:#1b1b1d;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.6);font-weight:700;color:#fff;font-size:18px
     }
+    .brand .title{font-weight:700;font-size:16px;letter-spacing:.6px;color:#f5f5f5}
+    nav .cta-buy{background:#b22222;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+    nav .cta-buy:hover{opacity:.95;transform:translateY(-1px)}
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
-    }
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+    @media(max-width:980px){.hero{grid-template-columns:1fr;}}
+    .hero-left h1{font-size:34px;line-height:1.05;color:#fff;margin-bottom:12px}
+    .hero-left p{color:#cfcfcf;margin-bottom:18px;font-size:16px}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn-primary{background:#e03b3b;color:#fff;padding:14px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer;}
+    .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.08);color:#ddd;padding:12px 16px;border-radius:10px;cursor:pointer}
+    .muted{color:#b7b7b7;font-size:14px}
 
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      color: #E63946; /* vermelho intenso */
-    }
+    /* BOX */
+    .offer-card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.04);padding:22px;border-radius:14px}
+    .price{font-size:28px;font-weight:800;color:#ffd9d9}
+    .price del{color:#8b8b8b;font-size:14px;font-weight:600;margin-left:8px}
+    .countdown{margin-top:12px;font-weight:700;color:#ffce7a}
 
-    h2 {
-      color: #FF6B35; /* laranja vibrante */
-      margin-top: 40px;
-    }
+    /* SECTIONS */
+    section{padding:28px 0;border-top:1px solid rgba(255,255,255,.02)}
+    h2{font-size:20px;margin-bottom:12px;color:#fff}
+    .lead{color:#cfcfcf;margin-bottom:12px}
+    .bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media(max-width:700px){.bullets{grid-template-columns:1fr}}
+    .bullet{background:rgba(255,255,255,.02);padding:14px;border-radius:10px;color:#e6e6e6}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media(max-width:980px){.grid-3{grid-template-columns:1fr}}
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
+    /* FAQ */
+    .faq-item{background:rgba(255,255,255,.01);border:1px solid rgba(255,255,255,.03);padding:12px;border-radius:10px;margin-bottom:8px;cursor:pointer}
+    .faq-question{display:flex;justify-content:space-between;align-items:center}
+    .faq-answer{display:none;color:#d0d0d0;margin-top:8px;font-size:14px}
 
-    .button {
-      display: inline-block;
-      padding: 18px 40px;
-      background: linear-gradient(90deg, #FFD60A, #FF6B35); /* amarelo ouro → laranja */
-      color: #000;
-      font-weight: bold;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-top: 30px;
+    /* FORM */
+    .form-row{display:flex;gap:8px}
+    .form-row input[type="text"], .form-row input[type="email"], .form-row input[type="tel"]{
+      flex:1;padding:12px;border-radius:8px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);color:#fff
     }
+    .tiny{font-size:13px;color:#bdbdbd;margin-top:8px}
 
-    .button:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px #FFD60A;
-    }
+    /* FOOTER */
+    footer{padding:18px 0;color:#9a9a9a;font-size:13px;border-top:1px solid rgba(255,255,255,.02);margin-top:18px}
+    .small{font-size:12px;color:#8f8f8f}
 
-    hr {
-      border: 0;
-      height: 1px;
-      background: #FF6B35;
-      margin: 40px 0;
-    }
+    /* badges / media */
+    .media-logos{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .media-logos a{display:inline-block;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:8px;color:#ddd;text-decoration:none;font-size:13px}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    /* utilities */
+    .muted-2{color:#9a9a9a}
+    .accent{color:#ff9a9a;font-weight:800}
+    .center{text-align:center}
+    .tight{line-height:1.25}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03);font-weight:700;color:#fff}
+
   </style>
 </head>
 <body>
-  <canvas class="particles" id="particles"></canvas>
-
   <div class="container">
-    <h1>🔥 Emagreça sem esforço!</h1>
-    <p><strong>15 minutos por dia é tudo o que você precisa.</strong></p>
+    <header class="site-header" role="banner">
+      <div class="brand" aria-label="Marca Projeto Virada 30D">
+        <div class="logo">V30</div>
+        <div>
+          <div class="title">Projeto Virada 30D</div>
+          <div class="muted" style="font-size:12px">15 min/dia · Método direto</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#comprar" class="cta-buy">GARANTIR AGORA</a>
+      </nav>
+    </header>
 
-    <p>Você já tentou de tudo para emagrecer — dietas malucas, treinos intermináveis, promessas milagrosas — e nada funcionou?  
-    A verdade é que a maioria dos métodos exige <strong>sacrifício demais</strong> e <strong>resultados de menos</strong>.  
-    E quando você não consegue seguir, a culpa e a frustração só aumentam.</p>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title">Emagreça em 30 dias com apenas <span class="accent">15 minutos por dia</span> — sem academia, sem dietas malucas e sem desculpas.</h1>
+        <p class="lead tight">Chega de se olhar no espelho e sentir vergonha. Projeto Virada 30D é o protocolo prático que destrava seu corpo e sua confiança em 30 dias. Você tem 15 minutos — nós mostramos o resto.</p>
 
-    <hr>
+        <div class="cta-row" role="region" aria-label="Chamada para ação">
+          <button class="btn-primary" id="cta-top">Quero minha Virada em 30D</button>
+          <button class="btn-ghost" id="cta-modules">Ver módulos & bônus</button>
+        </div>
 
-    <h2>Um método diferente</h2>
-    <p>➡️ Apenas 15 minutos por dia.<br>
-       ➡️ Sem academias caras.<br>
-       ➡️ Sem dietas impossíveis.<br>
-       ➡️ Sem precisar abrir mão da sua vida social.</p>
+        <p class="tiny" style="margin-top:12px">*Sem VSL. Sem enrolação. Garantia 14 dias.</p>
+      </div>
 
-    <p>Esse é o <strong>Desafio 30 Dias Fit Express</strong> — um programa criado para pessoas comuns que querem resultados reais sem complicação.  
-    O segredo? Um <strong>mecanismo único</strong> que combina micro-hábitos inteligentes + receitas rápidas + treinos curtos de alta eficiência.</p>
+      <aside class="offer-card" aria-label="Oferta">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="pill">LANÇAMENTO LIMITADO</div>
+            <div style="margin-top:12px;color:#ddd">Pacote digital + grupo fechado</div>
+          </div>
+          <div style="text-align:right">
+            <div class="price">R$197</div>
+            <div style="font-size:12px;color:#8f8f8f">ou 3x R$79</div>
+          </div>
+        </div>
 
-    <hr>
+        <div style="margin-top:14px" class="muted-2">
+          <strong>Valor total estimado:</strong> <del>R$997</del>
+        </div>
 
-    <h2>Resultados em 30 dias</h2>
-    <p>🚀 Em apenas 30 dias, você vai sentir seu corpo mais leve, sua energia renovada e sua autoestima de volta.</p>
+        <div class="countdown" id="countdown">Oferta expira em <span id="countdown-timer">00:23:59</span></div>
 
-    <hr>
+        <form id="buy-form" style="margin-top:16px" aria-label="Formulário de compra">
+          <div class="form-row">
+            <input id="buyer-name" name="name" type="text" placeholder="Seu nome" required>
+            <input id="buyer-phone" name="phone" type="tel" placeholder="WhatsApp (ex: 1199999-9999)" required>
+          </div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <button type="submit" class="btn-primary" style="flex:1">QUERO MINHA VIRADA — R$197</button>
+            <button type="button" id="btn-guarantee" class="btn-ghost">Garantia 14 dias</button>
+          </div>
+          <div class="tiny muted" style="margin-top:8px">Ao clicar, você será redirecionado para a página de confirmação / checkout. Pagamento seguro.</div>
+        </form>
+      </aside>
+    </section>
 
-    <h2>O valor real desse método</h2>
-    <p>Com tudo que você vai aprender aqui, o preço do produto poderia facilmente ser <strong>R$2000</strong>.  
-    Mas calma, esse não vai ser o valor do investimento.</p>
+    <!-- DOR -->
+    <section aria-labelledby="pain-title">
+      <h2 id="pain-title">A realidade que dói (e que você finge ignorar)</h2>
+      <p class="lead">Todo mês é a mesma porcaria: roupas apertadas, desistências, vergonha. Você merece mais — e tem 15 minutos por dia pra provar que pode.</p>
 
-    <p>Eu consegui um <strong>super desconto</strong> para você.  
-    O valor do investimento será de apenas <strong>R$29,90</strong>.</p>
+      <div class="bullets" style="margin-top:12px">
+        <div class="bullet">Você evita espelhos e fotos de corpo inteiro.</div>
+        <div class="bullet">Comprou roupas novas que ficaram no armário.</div>
+        <div class="bullet">Fica cansado(a) em tarefas simples do dia a dia.</div>
+        <div class="bullet">Começa dietas e desiste antes da semana terminar.</div>
+        <div class="bullet">Sente vergonha de tirar a camiseta ou usar biquíni.</div>
+        <div class="bullet">Cansado(a) de promessas vazias — quer prática.</div>
+      </div>
+    </section>
 
-    <p>E por esse valor simbólico, você garante acesso imediato a:  
-      <br>✅ Receitas fitness rápidas  
-      <br>✅ Planos de dieta simples  
-      <br>✅ Treinos curtos de 15 minutos
-    </p>
+    <!-- PROMESSA -->
+    <section aria-labelledby="promise-title">
+      <h2 id="promise-title">A virada em 30 dias — o protocolo</h2>
+      <p class="lead">Sem mágica. Sem fórmulas. Apenas execução curta, intensa e prática que realmente altera medidas e energia.</p>
 
-    <p><strong>⚠️ Oferta especial:</strong> esse valor é promocional e pode sair do ar a qualquer momento.</p>
+      <div class="grid-3" style="margin-top:14px">
+        <div class="offer-card">
+          <h3 style="font-size:16px;margin-bottom:8px">Fase 1 — Despertar (1–7)</h3>
+          <p class="muted">Rotinas simples para acordar seu metabolismo. Vídeos curtos, checklist diário e ajustes mentais.</p>
+        </div>
+        <div class="offer-card">
+          <h3 style="font-size:16px;margin-bottom:8px">Fase 2 — Acelera (8–21)</h3>
+          <p class="muted">Treinos express de 10–15 min + plano alimentar prático (substituições, lista de compras).</p>
+        </div>
+        <div class="offer-card">
+          <h3 style="font-size:16px;margin-bottom:8px">Fase 3 — Consolida (22–30)</h3>
+          <p class="muted">Hacks noturnos, rotina anti-sanfona e plano de manutenção simples.</p>
+        </div>
+      </div>
 
-    <a href="SEU_LINK_DE_CHECKOUT" class="button">👉 QUERO COMEÇAR AGORA</a>
+      <p style="margin-top:12px" class="muted-2">Expectativa responsável: muitas pessoas perdem <strong>5–7kg</strong> no primeiro mês com adesão mínima. Resultados variam.</p>
+    </section>
 
-    <p style="margin-top: 30px;"><em>Mas atenção: esse botão não é pra quem está confortável na zona de segurança.<br>
-    É pra quem tem fome de evolução, coragem de agir e visão de longo prazo.</em></p>
+    <!-- O QUE RECEBE -->
+    <section aria-labelledby="includes">
+      <h2 id="includes">O que você recebe agora</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div class="offer-card" style="flex:1;min-width:260px">
+          <strong>Módulos</strong>
+          <ul style="margin-top:8px;color:#dcdcdc">
+            <li>Módulo 1 — Despertar 7D (vídeos + checklist)</li>
+            <li>Módulo 2 — Acelera 14D (treinos + cardápio prático)</li>
+            <li>Módulo 3 — Consolida 9D (rotinas de manutenção)</li>
+          </ul>
+        </div>
+        <div class="offer-card" style="flex:1;min-width:220px">
+          <strong>Bônus</strong>
+          <ul style="margin-top:8px;color:#dcdcdc">
+            <li>Treino Express 7 minutos</li>
+            <li>Receitas Noturnas Anti-Gordura</li>
+            <li>Guia de Substituições & Lista de Compras</li>
+          </ul>
+        </div>
+        <div class="offer-card" style="flex:1;min-width:220px">
+          <strong>Extras</strong>
+          <ul style="margin-top:8px;color:#dcdcdc">
+            <li>Checklist diário interativo</li>
+            <li>Acesso ao grupo fechado (vagas limitadas)</li>
+            <li>Order bump: Guia do Sono Aristocrata (R$29)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÍDIA / PROVAS INDIRETAS -->
+    <section aria-labelledby="media-title">
+      <h2 id="media-title">Cobertura & respaldo indireto</h2>
+      <p class="lead">Não temos depoimentos — usamos fatos. Estudos e reportagens sobre treinos curtos e protocolos práticos estão em alta. Cole aqui as notícias que quer usar como prova (BBC, O Globo, UOL, Estadão, etc.).</p>
+
+      <div class="media-logos" style="margin-top:12px">
+        <!-- Substitua as '#' pelos links das matérias reais -->
+        <a href="#" target="_blank" rel="noopener">BBC — Treinos curtos e resultados</a>
+        <a href="#" target="_blank" rel="noopener">UOL — Dietas e consistência</a>
+        <a href="#" target="_blank" rel="noopener">O Globo — Ciência do HIIT</a>
+        <a href="#" target="_blank" rel="noopener">Estadão — Saúde & rotina</a>
+      </div>
+
+      <p class="tiny" style="margin-top:10px">Insira os links das matérias reais aqui — elas funcionam como prova indireta e legitimam sua promessa.</p>
+    </section>
+
+    <!-- OBJEÇÕES -->
+    <section aria-labelledby="objections">
+      <h2 id="objections">Cortando as desculpas</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div class="bullet">Não tenho tempo → 15 minutos. Menos que meia série da Netflix.</div>
+        <div class="bullet">Já tentei de tudo → Método simples, garante 14 dias para você testar.</div>
+        <div class="bullet">Não tenho disciplina → Checklist diário, rotinas curtas e automação de hábitos.</div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq">
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div style="margin-top:12px">
+        <div class="faq-item" data-open="false">
+          <div class="faq-question"><strong>Preciso de equipamentos?</strong><span>+</span></div>
+          <div class="faq-answer">Não. Todos os treinos são com peso do corpo. Rede de substituições alimentares com opções de baixo custo.</div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <div class="faq-question"><strong>Posso fazer se tenho pouco condicionamento?</strong><span>+</span></div>
+          <div class="faq-answer">Sim. Há variações de baixa intensidade e progressão semanal. Começa onde você está.</div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <div class="faq-question"><strong>Resultados são garantidos?</strong><span>+</span></div>
+          <div class="faq-answer">Resultados variam. Oferecemos garantia de 14 dias para você testar a execução do protocolo.</div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <div class="faq-question"><strong>Tenho condição médica — posso participar?</strong><span>+</span></div>
+          <div class="faq-answer">Consulte seu médico antes de começar. Programa pensado para adultos saudáveis.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section aria-labelledby="final-cta" class="center">
+      <h2 id="final-cta">Assuma sua Virada agora</h2>
+      <p class="lead">Você já sabe a dor de viver com o corpo que não representa quem você é. Ou entra no Projeto Virada 30D e vira o jogo em 30 dias — ou segue com as mesmas desculpas. A decisão é sua.</p>
+      <div style="margin-top:12px">
+        <button class="btn-primary" id="cta-final">QUERO MINHA VIRADA — R$197</button>
+        <button class="btn-ghost" id="cta-modules-2">Ver módulos & bônus</button>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="small">© Projeto Virada 30D — Resultados variam. Consulte médico se necessário. Política de reembolso: 14 dias.</div>
+        <div class="small">Aristocratas no topo. 🦌</div>
+      </div>
+    </footer>
   </div>
 
   <script>
-    // partículas em vermelho
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    /* CONTADOR (24h desde carregamento da página) */
+    (function(){
+      const target = new Date(Date.now() + 1000*60*60*24); // 24h a partir de agora
+      const el = document.getElementById('countdown-timer');
+      function pad(n){return String(n).padStart(2,'0')}
+      function tick(){
+        const now = new Date();
+        let diff = Math.max(0, Math.floor((target - now)/1000));
+        const h = Math.floor(diff/3600); diff%=3600;
+        const m = Math.floor(diff/60); const s = diff%60;
+        el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+        if (diff<=0){ clearInterval(timer); document.getElementById('countdown').textContent='Oferta expirada — preço será reajustado.'}
+      }
+      tick();
+      const timer = setInterval(tick,1000);
+    })();
 
-    let particles = [];
+    /* CTA scroll */
+    document.getElementById('cta-top').addEventListener('click',()=>{ document.getElementById('buyer-name').scrollIntoView({behavior:'smooth',block:'center'})});
+    document.getElementById('cta-final').addEventListener('click',()=>{ document.getElementById('buyer-name').scrollIntoView({behavior:'smooth',block:'center'})});
+    document.getElementById('cta-modules').addEventListener('click',()=>{ document.getElementById('includes').scrollIntoView({behavior:'smooth',block:'start'})});
+    document.getElementById('cta-modules-2').addEventListener('click',()=>{ document.getElementById('includes').scrollIntoView({behavior:'smooth',block:'start'})});
 
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5
-      });
-    }
+    /* FAQ toggle */
+    document.querySelectorAll('.faq-item').forEach(node=>{
+      node.addEventListener('click',()=>{
+        const open = node.getAttribute('data-open') === 'true';
+        node.setAttribute('data-open', !open);
+        const answer = node.querySelector('.faq-answer');
+        if(!open){ answer.style.display='block'; node.querySelector('.faq-question span').textContent='−'; }
+        else { answer.style.display='none'; node.querySelector('.faq-question span').textContent='+'; }
+      })
+    });
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#E63946'; // vermelho intenso
+    /* FORM: Simular redirecionamento para checkout / WhatsApp */
+    document.getElementById('buy-form').addEventListener('submit',function(e){
+      e.preventDefault();
+      const name = document.getElementById('buyer-name').value.trim();
+      const phone = document.getElementById('buyer-phone').value.trim();
+      if(!name || !phone){ alert('Preencha nome e WhatsApp para continuar.'); return; }
 
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
+      // Aqui você deve substituir pelo fluxo real (ex: criar pedido no seu backend / integrar gateway)
+      // Exemplo: redirecionar para WhatsApp com mensagem pronta (simples e rápido)
+      const text = encodeURIComponent(`Quero garantir a Virada 30D. Nome: ${name} / WhatsApp: ${phone} / Oferta: R$197`);
+      const waUrl = `https://wa.me/5511999999999?text=${text}`; // << SUBSTITUA O NÚMERO PELO SEU
+      window.open(waUrl,'_blank');
 
-        p.x += p.speedX;
-        p.y += p.speedY;
+      // Simulação de tracking
+      console.log('Pedido simulado:', {name, phone, product:'Virada 30D', price:197});
+      // mostre uma notificação simples:
+      alert('Quase lá — abrimos o WhatsApp para finalizar sua inscrição. Se não abrir, copie a mensagem e cole no seu WhatsApp.');
+    });
 
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    /* Garantia modal simples (alert) */
+    document.getElementById('btn-guarantee').addEventListener('click',function(){
+      alert('Garantia 14 dias: experimente o método por 14 dias. Se não notar diferença no corpo/energia seguindo o protocolo, reembolsamos. Regras simples aplicam-se — consulte os termos no painel de comprador.');
     });
   </script>
 </body>
