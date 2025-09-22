@@ -31,7 +31,7 @@
     .eyebrow{color:var(--accent-2);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-size:13px}
     h2{margin:12px 0 8px;font-size:34px;line-height:1.02}
     p.lead{color:var(--muted);margin:0 0 18px}
-    .price-badge{display:inline-block;background:var(--glass);padding:10px 12px;border-radius:12px;color:var(--accent);font-weight:700;margin-bottom:12px}
+    .price-badge{display:inline-block;background:var(--glass);padding:10px 12px;border-radius:12px;color:var(--accent);font-weight:700;margin-bottom:12px;text-decoration:line-through}
 
     .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
@@ -83,7 +83,8 @@
           <h2>Emagreça sem sofrimento — sem academia, com companhia diária</h2>
           <p class="lead">Sua amiga IA que monta planos alimentares práticos, receitas fáceis e exercícios que dá pra fazer no tapete da sala. Motivação diária, checagens simples e resultados reais em até 15 dias.</p>
 
-          <div class="price-badge">R$97 vitalício — valor real R$297, aproveite o desconto!</div>
+          <div class="price-badge">R$297</div>
+          <div style="font-size:24px;font-weight:700;margin:8px 0">Agora por R$97 vitalício!</div>
 
           <div class="features" style="margin-top:12px">
             <div class="card">
@@ -182,58 +183,6 @@
             <strong>AmigaFit</strong>
             <div style="color:var(--muted);font-size:13px">R$97 vitalício • Cancelamento quando quiser</div>
           </div>
-          <div style="color:var(--muted);font-size:13px">© "AmigaFit" — Não substitui aconselhamento profissional</div>
-        </div>
-      </div>
-    </footer>
+          <div style="color:var(--muted);font-size:13px">©
 
-  </div>
-
-  <script>
-    function handleSignup(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const name = document.getElementById('name').value.trim() || 'amiga';
-      if(!email || !email.includes('@')){alert('Coloque um email válido!.'); return false}
-
-      // Simulação de envio: aqui você conecta com backend/stripe/pagamentos
-      openSuccessModal(name, email);
-      return false;
-    }
-
-    function openSuccessModal(name, email){
-      const msg = `Boa! ${name} — seu pré-cadastro foi registrado com ${email}. Em breve você receberá instruções para ativar o teste grátis de 7 dias.`;
-      alert(msg);
-    }
-
-    // Pequeno ajuste: smooth scroll para links futuros
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}))
-
-    // Contador regressivo
-    let totalSeconds = 15 * 60; // 15 minutos
-    const timerEl = document.getElementById('timer');
-    const redirectUrl = "https://sua-pagina.com"; // coloque a URL que deseja
-
-    function updateTimer() {
-      let minutes = Math.floor(totalSeconds / 60);
-      let seconds = totalSeconds % 60;
-      timerEl.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-
-      // Quando faltar 2 minutos, fundo vermelho piscando
-      if(totalSeconds <= 120){
-        timerEl.style.backgroundColor = totalSeconds % 2 === 0 ? 'red' : 'transparent';
-        timerEl.style.color = totalSeconds % 2 === 0 ? 'white' : 'red';
-      }
-
-      if(totalSeconds === 0){
-        clearInterval(timerInterval);
-        window.location.href = redirectUrl;
-      }
-      totalSeconds--;
-    }
-
-    const timerInterval = setInterval(updateTimer, 1000);
-    updateTimer();
-  </script>
-</body>
-</html>
+            
