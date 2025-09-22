@@ -1,210 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AmigaFit — Desafio 15 Dias | Acesso Único R$97</title>
-  <meta name="description" content="AmigaFit: sua agente de IA para emagrecimento saudável e prático. Planos alimentares, exercícios em casa, motivação diária. Sem academia. Sem mimimi." />
-  <meta property="og:title" content="AmigaFit — Desafio 15 Dias | Acesso Único R$97" />
-  <meta property="og:description" content="Agente de IA que te guia com planos simples, receitas e exercícios caseiros. Acolhedora, motivadora e divertida." />
-  <meta property="og:type" content="website" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmigaFit IA - Desafio 15 Dias</title>
   <style>
-    :root{
-      --bg:#0b0b0d;--card:#0f1113;--muted:#9aa0a6;--accent:#e43b8b;--accent-2:#6be3b1;--glass: rgba(255,255,255,0.03);
-      --maxw:1100px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:linear-gradient(180deg,#050506 0%, #0b0b0d 60%); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--maxw); margin:40px auto; padding:28px}
-    nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),#3b82f6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
-    .brand h1{font-size:18px;margin:0}
-    .nav-actions{display:flex;gap:12px;align-items:center}
-    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
-
-    .hero{display:flex;gap:40px;align-items:center;margin-top:36px}
-    .hero-left{flex:1}
-    .eyebrow{color:var(--accent-2);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-size:13px}
-    h2{margin:12px 0 8px;font-size:34px;line-height:1.02}
-    p.lead{color:var(--muted);margin:0 0 18px}
-    .price-badge{display:inline-block;background:var(--glass);padding:10px 12px;border-radius:12px;color:var(--accent);font-weight:700;margin-bottom:12px}
-
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .card small{color:var(--muted)}
-
-    .hero-right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.04)}
-    .signup input{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:10px}
-    .signup .muted{font-size:13px;color:var(--muted)}
-
-    section.section{margin-top:48px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .how-step{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-
-    .pricing{display:flex;gap:18px;align-items:center}
-    .price-card{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg,#0f1113,#0c0d0f);border:1px solid rgba(255,255,255,0.03)}
-    .price-big{font-size:28px;font-weight:800;color:var(--accent-2)}
-    .ok{font-size:13px;color:var(--muted)}
-
-    footer{margin-top:36px;padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
-    .center{text-align:center}
-
-    .faq{display:grid;gap:10px}
-    .faq-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01)}
-
-    /* responsive */
-    @media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}.grid-3{grid-template-columns:1fr}.features{grid-template-columns:1fr}}
+    header {
+      background: #000;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #aaa;
+    }
+    .cta {
+      margin-top: 2rem;
+    }
+    .cta a {
+      background: #e63946;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .cta a:hover {
+      background: #d62828;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .preco-real {
+      font-size: 1.5rem;
+      text-decoration: line-through;
+      color: #888;
+    }
+    .preco-desconto {
+      font-size: 2rem;
+      color: #06d6a0;
+      margin-top: 0.5rem;
+    }
+    .contador {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #ffd60a;
+      transition: all 0.3s ease;
+    }
+    .urgente {
+      color: #ff0000;
+      font-weight: bold;
+      animation: piscar 1s infinite;
+    }
+    @keyframes piscar {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      color: #888;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <div class="brand">
-        <div class="logo">AF</div>
-        <div>
-          <h1>AmigaFit</h1>
-          <small style="color:var(--muted)">Agente de IA — Desafio 15 dias</small>
-        </div>
-      </div>
-      <div class="nav-actions">
-        <button class="btn ghost" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">FAQ</button>
-        <button class="btn" onclick="document.getElementById('email').focus()">Comprar por R$97</button>
-      </div>
-    </nav>
+  <header>
+    <h1>AmigaFit IA - Sua parceira secreta no emagrecimento</h1>
+    <p>Planos práticos, cardápios simples e motivação diária sem precisar de academia.</p>
+    <div class="cta">
+      <a href="#checkout">Quero garantir meu desconto — R$97</a>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="eyebrow">Desafio 15 dias</div>
-          <h2>Emagreça sem sofrimento — sem academia, com companhia diária</h2>
-          <p class="lead">Sua amiga IA que monta planos alimentares práticos, receitas fáceis e exercícios que dá pra fazer no tapete da sala. Motivação diária, checagens simples e resultados reais em até 15 dias.</p>
+  <section>
+    <h2>Oferta Especial de Lançamento</h2>
+    <p class="preco-real">De <strong>R$297</strong></p>
+    <p class="preco-desconto">Por apenas <strong>R$97</strong> acesso único e vitalício</p>
+    <p>Aproveite essa condição especial de lançamento. Essa oportunidade não ficará disponível para sempre.</p>
+    
+    <div class="contador" id="contador">
+      Oferta expira em: 15:00
+    </div>
 
-          <div class="price-badge">Acesso único — R$97</div>
+    <div class="cta">
+      <a id="checkout" href="LINK_DO_CHECKOUT">Garantir acesso vitalício por R$97</a>
+    </div>
+  </section>
 
-          <div class="features" style="margin-top:12px">
-            <div class="card">
-              <strong>Planos semanais</strong>
-              <small>Cardápios que cabem na sua rotina.</small>
-            </div>
-            <div class="card">
-              <strong>Exercícios em casa</strong>
-              <small>Sem equipamento, sem desculpa.</small>
-            </div>
-            <div class="card">
-              <strong>Mensagens motivacionais</strong>
-              <small>Um empurrãozinho diário que funciona.</small>
-            </div>
-            <div class="card">
-              <strong>Acompanhamento simples</strong>
-              <small>Check-ins fáceis, progresso real.</small>
-            </div>
-          </div>
-
-        </div>
-
-        <aside class="hero-right">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-size:13px;color:var(--muted)">Acesso único</div>
-              <div style="font-weight:800;font-size:20px">R$97</div>
-            </div>
-            <div style="text-align:right;color:var(--muted);font-size:12px">Pagamento único</div>
-          </div>
-
-          <form class="signup" onsubmit="return handleSignup(event)" style="margin-top:14px">
-            <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" required />
-            <input id="name" name="name" type="text" placeholder="Seu nome (pra te chamar de amiga)" />
-            <button class="btn" type="submit">Quero entrar — R$97</button>
-            <div class="muted" style="margin-top:10px">Pagamento via cartão ou PIX após checkout.</div>
-          </form>
-
-          <div style="margin-top:14px;font-size:13px;color:var(--muted)">
-            <strong>O que você recebe:</strong>
-            <ul style="margin:6px 0 0 18px;color:var(--muted)">
-              <li>Plano alimentar personalizado</li>
-              <li>Cardápio semanal + receitas</li>
-              <li>Exercícios curtos (<15 min)</li>
-              <li>Mensagens diárias e check-ins</li>
-            </ul>
-          </div>
-        </aside>
-      </section>
-
-      <section class="section">
-        <h3 style="margin:0 0 12px">Como funciona</h3>
-        <div class="grid-3">
-          <div class="how-step">
-            <strong>1 — Diagnóstico rápido</strong>
-            <p class="ok">Responda 5 perguntas e a IA monta seu plano. Rápido como mensagem de texto.</p>
-          </div>
-          <div class="how-step">
-            <strong>2 — Plano prático</strong>
-            <p class="ok">Cardápios flexíveis, receitas reais e exercícios de 10–15 minutos.</p>
-          </div>
-          <div class="how-step">
-            <strong>3 — Acompanhamento diário</strong>
-            <p class="ok">Mensagens, lembretes e checagens para manter a consistência.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Depoimentos</h3>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
-          <div class="card">"Em 12 dias perdi 3kg sem passar fome. A IA virou minha parceira." — Juliana, 32</div>
-          <div class="card">"Os treinos em casa são curtinhos e eficientes. Recomendo." — Carla, 40</div>
-          <div class="card">"Gosto do tom acolhedor, me motiva mesmo nos dias difíceis." — Fernanda, 28</div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Perguntas frequentes</h3>
-        <div class="faq" style="margin-top:12px">
-          <div class="faq-item"><strong>Isso é um nutricionista?</strong><div class="ok">Não. AmigaFit é um agente de IA que dá planos práticos e educativos. Sempre recomendamos procurar um profissional para condições específicas.</div></div>
-          <div class="faq-item"><strong>Preciso de academia?</strong><div class="ok">Não. Todos os exercícios foram pensados para casa, sem equipamentos.</div></div>
-          <div class="faq-item"><strong>Garantia de resultado?</strong><div class="ok">Resultados variam. Seguimento e consistência trazem os melhores resultados. Prometemos acompanhar e facilitar o processo — o resto é sua ação.</div></div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="center">
-      <div style="max-width:900px;margin:0 auto">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-          <div>
-            <strong>AmigaFit</strong>
-            <div style="color:var(--muted);font-size:13px">Acesso único — R$97</div>
-          </div>
-          <div style="color:var(--muted);font-size:13px">© "AmigaFit" — Não substitui aconselhamento profissional</div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
+  <footer>
+    <p>© 2025 AmigaFit IA - Todos os direitos reservados</p>
+  </footer>
 
   <script>
-    function handleSignup(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const name = document.getElementById('name').value.trim() || 'amiga';
-      if(!email || !email.includes('@')){alert('Coloca um e-mail válido, porra.'); return false}
+    function iniciarContador(duracao, display) {
+      let timer = duracao, minutos, segundos;
+      const intervalo = setInterval(function () {
+        minutos = parseInt(timer / 60, 10);
+        segundos = parseInt(timer % 60, 10);
 
-      // Simulação de envio: aqui você conecta com backend/kiwify/pagamentos
-      openSuccessModal(name, email);
-      return false;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+
+        display.textContent = "Oferta expira em: " + minutos + ":" + segundos;
+
+        // Quando restarem menos de 2 minutos, aplicar classe de urgência
+        if (timer <= 120 && !display.classList.contains("urgente")) {
+          display.classList.add("urgente");
+        }
+
+        if (--timer < 0) {
+          clearInterval(intervalo);
+          display.textContent = "A oferta expirou!";
+          // redireciona para o checkout
+          window.location.href = "LINK_DO_CHECKOUT";
+        }
+      }, 1000);
     }
 
-    function openSuccessModal(name, email){
-      const msg = `Boa! ${name} — seu pré-cadastro foi registrado com ${email}. Em breve você receberá instruções para concluir o pagamento único de R$97.`;
-      alert(msg);
-    }
-
-    // Pequeno ajuste: smooth scroll para links futuros
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}))
+    window.onload = function () {
+      let quinzeMinutos = 60 * 15, // 15 minutos
+          display = document.getElementById('contador');
+      iniciarContador(quinzeMinutos, display);
+    };
   </script>
 </body>
 </html>
