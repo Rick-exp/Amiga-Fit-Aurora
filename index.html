@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AmigaFit — Emagreça em 15 dias | R$47/mês</title>
+  <title>AmigaFit — Emagreça em 15 dias | R$97 vitalício</title>
   <meta name="description" content="AmigaFit: sua agente de IA para emagrecimento saudável e prático. Planos alimentares, exercícios em casa, motivação diária. Sem academia. Sem mimimi." />
-  <meta property="og:title" content="AmigaFit — Emagreça em 15 dias | R$47/mês" />
+  <meta property="og:title" content="AmigaFit — Emagreça em 15 dias | R$97 vitalício" />
   <meta property="og:description" content="Agente de IA que te guia com planos simples, receitas e exercícios caseiros. Acolhedora, motivadora e divertida." />
   <meta property="og:type" content="website" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@
       </div>
       <div class="nav-actions">
         <button class="btn ghost" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">FAQ</button>
-        <button class="btn" onclick="document.getElementById('email').focus()">Assinar R$47/mês</button>
+        <button class="btn" onclick="document.getElementById('email').focus()">Assinar R$97 vitalício</button>
       </div>
     </nav>
 
@@ -83,7 +83,7 @@
           <h2>Emagreça sem sofrimento — sem academia, com companhia diária</h2>
           <p class="lead">Sua amiga IA que monta planos alimentares práticos, receitas fáceis e exercícios que dá pra fazer no tapete da sala. Motivação diária, checagens simples e resultados reais em até 15 dias.</p>
 
-          <div class="price-badge">R$47 / mês — cancelamento quando quiser</div>
+          <div class="price-badge">R$97 vitalício — valor real R$297, aproveite o desconto!</div>
 
           <div class="features" style="margin-top:12px">
             <div class="card">
@@ -104,13 +104,16 @@
             </div>
           </div>
 
+          <!-- Contador regressivo -->
+          <div id="timer" style="margin-top:20px;font-size:24px;font-weight:700;padding:12px 20px;border-radius:12px;background:rgba(255,255,255,0.05);width:fit-content;">15:00</div>
+
         </div>
 
         <aside class="hero-right">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div>
-              <div style="font-size:13px;color:var(--muted)">Plano mensal</div>
-              <div style="font-weight:800;font-size:20px">R$47 <small style="color:var(--muted)">/mês</small></div>
+              <div style="font-size:13px;color:var(--muted)">Plano vitalício</div>
+              <div style="font-weight:800;font-size:20px">R$97 <small style="color:var(--muted)">vitalício</small></div>
             </div>
             <div style="text-align:right;color:var(--muted);font-size:12px">Teste 7 dias grátis</div>
           </div>
@@ -118,7 +121,7 @@
           <form class="signup" onsubmit="return handleSignup(event)" style="margin-top:14px">
             <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" required />
             <input id="name" name="name" type="text" placeholder="Seu nome (pra te chamar de amiga)" />
-            <button class="btn" type="submit">Quero entrar — R$47/mês</button>
+            <button class="btn" type="submit">Quero entrar — R$97 vitalício</button>
             <div class="muted" style="margin-top:10px">Pagamento via cartão ou PIX após checkout. Cancelamento fácil.</div>
           </form>
 
@@ -177,7 +180,7 @@
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
           <div>
             <strong>AmigaFit</strong>
-            <div style="color:var(--muted);font-size:13px">R$47/mês • Cancelamento quando quiser</div>
+            <div style="color:var(--muted);font-size:13px">R$97 vitalício • Cancelamento quando quiser</div>
           </div>
           <div style="color:var(--muted);font-size:13px">© "AmigaFit" — Não substitui aconselhamento profissional</div>
         </div>
@@ -205,8 +208,32 @@
 
     // Pequeno ajuste: smooth scroll para links futuros
     document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}))
+
+    // Contador regressivo
+    let totalSeconds = 15 * 60; // 15 minutos
+    const timerEl = document.getElementById('timer');
+    const redirectUrl = "https://sua-pagina.com"; // coloque a URL que deseja
+
+    function updateTimer() {
+      let minutes = Math.floor(totalSeconds / 60);
+      let seconds = totalSeconds % 60;
+      timerEl.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+
+      // Quando faltar 2 minutos, fundo vermelho piscando
+      if(totalSeconds <= 120){
+        timerEl.style.backgroundColor = totalSeconds % 2 === 0 ? 'red' : 'transparent';
+        timerEl.style.color = totalSeconds % 2 === 0 ? 'white' : 'red';
+      }
+
+      if(totalSeconds === 0){
+        clearInterval(timerInterval);
+        window.location.href = redirectUrl;
+      }
+      totalSeconds--;
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
   </script>
 </body>
 </html>
-
-
