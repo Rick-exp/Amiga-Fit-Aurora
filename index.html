@@ -194,7 +194,7 @@
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
       const name = document.getElementById('name').value.trim() || 'amiga';
-      if(!email || !email.includes('@')){alert('Coloca um e-mail válido, porra.'); return false}
+      if(!email || !email.includes('@')){alert('Coloque um email válido!.'); return false}
 
       // Simulação de envio: aqui você conecta com backend/stripe/pagamentos
       openSuccessModal(name, email);
