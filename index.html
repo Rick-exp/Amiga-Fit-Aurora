@@ -2,123 +2,210 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projeto Virada 30D — Emagreça em 30 dias</title>
-  <meta name="description" content="Projeto Virada 30D: protocolo de 15 minutos por dia para quem quer resultado real sem dieta maluca nem academia." />
-  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AmigaFit — Desafio 15 Dias | Acesso Único R$97</title>
+  <meta name="description" content="AmigaFit: sua agente de IA para emagrecimento saudável e prático. Planos alimentares, exercícios em casa, motivação diária. Sem academia. Sem mimimi." />
+  <meta property="og:title" content="AmigaFit — Desafio 15 Dias | Acesso Único R$97" />
+  <meta property="og:description" content="Agente de IA que te guia com planos simples, receitas e exercícios caseiros. Acolhedora, motivadora e divertida." />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,#070707 0%, #0f0f10 60%);
-      color:#e9e9ea;
-      line-height:1.5;
+    :root{
+      --bg:#0b0b0d;--card:#0f1113;--muted:#9aa0a6;--accent:#e43b8b;--accent-2:#6be3b1;--glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
     }
-    .container{max-width:1100px;margin:0 auto;padding:28px;}
-    header.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand .logo{width:48px;height:48px;border-radius:8px;background:#1b1b1d;display:flex;align-items:center;justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,.6);font-weight:700;color:#fff;font-size:18px}
-    .brand .title{font-weight:700;font-size:16px;color:#f5f5f5}
-    nav .cta-buy{background:#b22222;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
-    @media(max-width:980px){.hero{grid-template-columns:1fr;}}
-    .btn-primary{background:#e03b3b;color:#fff;padding:14px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer;}
-    .offer-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);padding:22px;border-radius:14px}
-    .price{font-size:28px;font-weight:800;color:#ffd9d9}
-    .countdown{margin-top:12px;font-weight:700;color:#ffce7a}
-    section{padding:28px 0;border-top:1px solid rgba(255,255,255,.02)}
-    h2{font-size:20px;margin-bottom:12px;color:#fff}
-    .bullet{background:rgba(255,255,255,.02);padding:14px;border-radius:10px;color:#e6e6e6;margin-bottom:8px}
-    .faq-item{background:rgba(255,255,255,.01);border:1px solid rgba(255,255,255,.03);padding:12px;border-radius:10px;margin-bottom:8px;cursor:pointer}
-    .faq-answer{display:none;color:#d0d0d0;margin-top:8px;font-size:14px}
-    footer{padding:18px 0;color:#9a9a9a;font-size:13px;border-top:1px solid rgba(255,255,255,.02);margin-top:18px}
-    .media-logos{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px}
-    .media-logos img{max-height:80px;border-radius:6px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:linear-gradient(180deg,#050506 0%, #0b0b0d 60%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw); margin:40px auto; padding:28px}
+    nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),#3b82f6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+    .brand h1{font-size:18px;margin:0}
+    .nav-actions{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    .hero{display:flex;gap:40px;align-items:center;margin-top:36px}
+    .hero-left{flex:1}
+    .eyebrow{color:var(--accent-2);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-size:13px}
+    h2{margin:12px 0 8px;font-size:34px;line-height:1.02}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .price-badge{display:inline-block;background:var(--glass);padding:10px 12px;border-radius:12px;color:var(--accent);font-weight:700;margin-bottom:12px}
+
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card small{color:var(--muted)}
+
+    .hero-right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.04)}
+    .signup input{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:10px}
+    .signup .muted{font-size:13px;color:var(--muted)}
+
+    section.section{margin-top:48px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .how-step{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+
+    .pricing{display:flex;gap:18px;align-items:center}
+    .price-card{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg,#0f1113,#0c0d0f);border:1px solid rgba(255,255,255,0.03)}
+    .price-big{font-size:28px;font-weight:800;color:var(--accent-2)}
+    .ok{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:36px;padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+    .center{text-align:center}
+
+    .faq{display:grid;gap:10px}
+    .faq-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01)}
+
+    /* responsive */
+    @media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}.grid-3{grid-template-columns:1fr}.features{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
+  <div class="wrap">
+    <nav>
       <div class="brand">
-        <div class="logo">V30</div>
+        <div class="logo">AF</div>
         <div>
-          <div class="title">Projeto Virada 30D</div>
-          <div style="font-size:12px;color:#b7b7b7">15 min/dia · Método direto</div>
+          <h1>AmigaFit</h1>
+          <small style="color:var(--muted)">Agente de IA — Desafio 15 dias</small>
         </div>
       </div>
-      <nav><a href="#comprar" class="cta-buy">GARANTIR AGORA</a></nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1>Emagreça em 30 dias com apenas <span style="color:#ff9a9a">15 minutos por dia</span></h1>
-        <p>Chega de se olhar no espelho e sentir vergonha. Projeto Virada 30D é o protocolo prático que destrava seu corpo e sua confiança em 30 dias.</p>
-        <button class="btn-primary" id="cta-top">Quero minha Virada em 30D</button>
+      <div class="nav-actions">
+        <button class="btn ghost" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">FAQ</button>
+        <button class="btn" onclick="document.getElementById('email').focus()">Comprar por R$97</button>
       </div>
+    </nav>
 
-      <aside class="offer-card" id="comprar">
-        <div>
-          <div class="price">R$19,90</div>
-          <div style="margin-top:8px;color:#ddd">Valor real: <del>R$197</del></div>
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="eyebrow">Desafio 15 dias</div>
+          <h2>Emagreça sem sofrimento — sem academia, com companhia diária</h2>
+          <p class="lead">Sua amiga IA que monta planos alimentares práticos, receitas fáceis e exercícios que dá pra fazer no tapete da sala. Motivação diária, checagens simples e resultados reais em até 15 dias.</p>
+
+          <div class="price-badge">Acesso único — R$97</div>
+
+          <div class="features" style="margin-top:12px">
+            <div class="card">
+              <strong>Planos semanais</strong>
+              <small>Cardápios que cabem na sua rotina.</small>
+            </div>
+            <div class="card">
+              <strong>Exercícios em casa</strong>
+              <small>Sem equipamento, sem desculpa.</small>
+            </div>
+            <div class="card">
+              <strong>Mensagens motivacionais</strong>
+              <small>Um empurrãozinho diário que funciona.</small>
+            </div>
+            <div class="card">
+              <strong>Acompanhamento simples</strong>
+              <small>Check-ins fáceis, progresso real.</small>
+            </div>
+          </div>
+
         </div>
-        <div class="countdown" id="countdown">Oferta expira em <span id="countdown-timer">20:00</span></div>
-        <button class="btn-primary" style="margin-top:16px">QUERO MINHA VIRADA — R$19,90</button>
-      </aside>
-    </section>
 
-    <!-- DOR -->
-    <section>
-      <h2>A realidade que dói</h2>
-      <div class="bullet">Você evita espelhos e fotos de corpo inteiro.</div>
-      <div class="bullet">Comprou roupas novas que ficaram no armário.</div>
-      <div class="bullet">Fica cansado(a) em tarefas simples do dia a dia.</div>
-    </section>
+        <aside class="hero-right">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Acesso único</div>
+              <div style="font-weight:800;font-size:20px">R$97</div>
+            </div>
+            <div style="text-align:right;color:var(--muted);font-size:12px">Pagamento único</div>
+          </div>
 
-    <!-- PROMESSA -->
-    <section>
-      <h2>A virada em 30 dias — o protocolo</h2>
-      <p>Sem mágica. Apenas execução curta, intensa e prática que altera medidas e energia.</p>
-    </section>
+          <form class="signup" onsubmit="return handleSignup(event)" style="margin-top:14px">
+            <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" required />
+            <input id="name" name="name" type="text" placeholder="Seu nome (pra te chamar de amiga)" />
+            <button class="btn" type="submit">Quero entrar — R$97</button>
+            <div class="muted" style="margin-top:10px">Pagamento via cartão ou PIX após checkout.</div>
+          </form>
 
-    <!-- O QUE RECEBE -->
-    <section>
-      <h2>O que você recebe agora</h2>
-      <div class="offer-card">
-        <strong>Extras</strong>
-        <ul style="margin-top:8px;color:#dcdcdc">
-          <li>Checklist diário interativo</li>
-          <li>Acesso ao grupo fechado (vagas limitadas)</li>
-        </ul>
+          <div style="margin-top:14px;font-size:13px;color:var(--muted)">
+            <strong>O que você recebe:</strong>
+            <ul style="margin:6px 0 0 18px;color:var(--muted)">
+              <li>Plano alimentar personalizado</li>
+              <li>Cardápio semanal + receitas</li>
+              <li>Exercícios curtos (<15 min)</li>
+              <li>Mensagens diárias e check-ins</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <h3 style="margin:0 0 12px">Como funciona</h3>
+        <div class="grid-3">
+          <div class="how-step">
+            <strong>1 — Diagnóstico rápido</strong>
+            <p class="ok">Responda 5 perguntas e a IA monta seu plano. Rápido como mensagem de texto.</p>
+          </div>
+          <div class="how-step">
+            <strong>2 — Plano prático</strong>
+            <p class="ok">Cardápios flexíveis, receitas reais e exercícios de 10–15 minutos.</p>
+          </div>
+          <div class="how-step">
+            <strong>3 — Acompanhamento diário</strong>
+            <p class="ok">Mensagens, lembretes e checagens para manter a consistência.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Depoimentos</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
+          <div class="card">"Em 12 dias perdi 3kg sem passar fome. A IA virou minha parceira." — Juliana, 32</div>
+          <div class="card">"Os treinos em casa são curtinhos e eficientes. Recomendo." — Carla, 40</div>
+          <div class="card">"Gosto do tom acolhedor, me motiva mesmo nos dias difíceis." — Fernanda, 28</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Perguntas frequentes</h3>
+        <div class="faq" style="margin-top:12px">
+          <div class="faq-item"><strong>Isso é um nutricionista?</strong><div class="ok">Não. AmigaFit é um agente de IA que dá planos práticos e educativos. Sempre recomendamos procurar um profissional para condições específicas.</div></div>
+          <div class="faq-item"><strong>Preciso de academia?</strong><div class="ok">Não. Todos os exercícios foram pensados para casa, sem equipamentos.</div></div>
+          <div class="faq-item"><strong>Garantia de resultado?</strong><div class="ok">Resultados variam. Seguimento e consistência trazem os melhores resultados. Prometemos acompanhar e facilitar o processo — o resto é sua ação.</div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="center">
+      <div style="max-width:900px;margin:0 auto">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div>
+            <strong>AmigaFit</strong>
+            <div style="color:var(--muted);font-size:13px">Acesso único — R$97</div>
+          </div>
+          <div style="color:var(--muted);font-size:13px">© "AmigaFit" — Não substitui aconselhamento profissional</div>
+        </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- PROVAS INDIRETAS -->
-    <section>
-      <h2>Cobertura & respaldo indireto</h2>
-      <p>Reportagens mostram que treinos curtos funcionam de verdade:</p>
-      <div class="media-logos">
-        <a href="https://www.cnnbrasil.com.br/saude/treino-para-emagrecer-veja-4-exercicios-analisados-por-especialistas/" target="_blank">
-          <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/cnn-treino.jpg" alt="CNN Brasil treino para emagrecer">
-        </a>
-        <a href="https://www.opovo.com.br/agencia/edicase/2025/03/19/veja-como-os-treinos-curtos-beneficiam-a-saude.html" target="_blank">
-          <img src="https://www.opovo.com.br/_midias/jpg/2025/03/19/treinos_curtos-12345678.jpg" alt="O Povo treinos curtos">
-        </a>
-        <a href="https://www.olimpiadatododia.com.br/bem-estar-todo-dia/693795-treinos-curtos-resultados-rapidos/" target="_blank">
-          <img src="https://www.olimpiadatododia.com.br/wp-content/uploads/2025/07/treinos-curtos.jpg" alt="Olimpíada Todo Dia treinos curtos">
-        </a>
-      </div>
-    </section>
+  </div>
 
-    <!-- OBJEÇÕES -->
-    <section>
-      <h2>Cortando as desculpas</h2>
-      <div class="bullet">Não tenho tempo → 15 minutos. Menos que meia série da Netflix.</div>
-      <div class="bullet">Já tentei de tudo → Método simples, garantia 14 dias.</div>
-    </section>
+  <script>
+    function handleSignup(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const name = document.getElementById('name').value.trim() || 'amiga';
+      if(!email || !email.includes('@')){alert('Coloca um e-mail válido, porra.'); return false}
 
-    <!-- FAQ -->
-    <section>
-      <h2>Perguntas frequentes</h2>
-      <div class="faq-item"><div><strong>Preciso de equipamentos?</strong></div><div class="faq
+      // Simulação de envio: aqui você conecta com backend/kiwify/pagamentos
+      openSuccessModal(name, email);
+      return false;
+    }
+
+    function openSuccessModal(name, email){
+      const msg = `Boa! ${name} — seu pré-cadastro foi registrado com ${email}. Em breve você receberá instruções para concluir o pagamento único de R$97.`;
+      alert(msg);
+    }
+
+    // Pequeno ajuste: smooth scroll para links futuros
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}))
+  </script>
+</body>
+</html>
+
